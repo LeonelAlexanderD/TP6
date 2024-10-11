@@ -4,6 +4,8 @@ from django.db import models
 class Curso(models.Model):
     nombre = models.CharField(max_length=30, unique=True)
     cantidad_horas = models.PositiveSmallIntegerField()
+    
+
 
 class Estudiante(models.Model):
     nombre = models.CharField(max_length=30)
