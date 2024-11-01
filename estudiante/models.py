@@ -5,6 +5,9 @@ class Curso(models.Model):
     nombre = models.CharField(max_length=30, unique=True)
     cantidad_horas = models.PositiveSmallIntegerField()
     
+    def __str__(self):
+        return self.nombre
+    
 
 
 class Estudiante(models.Model):
@@ -15,5 +18,5 @@ class Estudiante(models.Model):
     curso = models.ForeignKey(Curso, on_delete=models.CASCADE) 
     
     def __str__(self):
-        return f"{self.nombre} {self.apellido}, Curso: {self.curso.nombre}, Nota: {self.nota_curso}"
+        return f"{self.nombre} {self.apellido}"
     
